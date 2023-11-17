@@ -9,8 +9,8 @@ description: >-
 
 ## What you will accomplish
 
-- ✅ Create and mint a new fungible token on HTS
-- ✅ Query the token balance
+- [ ] Create and mint a new fungible token on HTS
+- [ ] Query the token balance
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/),
 is intended to be used alongside this tutorial.
@@ -73,7 +73,7 @@ This transaction requires many properties to be set on it.
 
 - For fungible tokens (which are analogous to ERC20 tokens),
 set the token type to `TokenType.FungibleCommon`.
-- Set the token name and token symbol based on your name (or other moniker).
+- Set the token name and token symbol based on your name (or nickname).
 - Set the decimal property to `2`.
 - Set the initial supply to 1 million.
 
@@ -99,7 +99,7 @@ set the token type to `TokenType.FungibleCommon`.
 - Decimals: This is the number of decimal places the currency uses. For example, `2` mimic "cents", where the smallest unit of the token is 1/100th of a single token.
 - Initial Supply: This is the number units of the token to "mint" when first creating the token. Note that this is specified in the smallest units, so `1_000_000` initial supply when decimals is 2, results in `10_000` full units of the token being minted. It might be easier to think about it as "one million cents equals ten thousand dollars".
 - Treasury Account ID: This is the account that the initial supply is credited to. For example, using `accountId` would mean that your own account receives all the tokens when they are minted.
-- Admin Key: This is the account that is authorised to administrate this token. For example, using `accountKey` would mena that your own account would get to perform actions such as minting additional supply.
+- Admin Key: This is the account that is authorised to administrate this token. For example, using `accountKey` would mean that your own account would get to perform actions such as minting additional supply.
 
 </details>
 
@@ -147,7 +147,7 @@ Open the URL, that was output as `tokenExplorerUrl` above,
 in your browser and check that:
 
 - (1) The token should exist
-- (2) The "name" and "symbol" should be shown as the same values derived from your name (or other moniker) that you chose earlier
+- (2) The "name" and "symbol" should be shown as the same values derived from your name (or nickname) that you chose earlier
 - (3) The "treasury account" should match `accountId`
 - (4) Both the "total supply" and "initial supply" should be `10,000`
     - Note that it is not `1,000,000` because of the 2 decimal places configured
@@ -156,7 +156,12 @@ in your browser and check that:
 
 ## Complete
 
-Congratulations, you have completed this Hello World sequence! 🎉🎉🎉
+Congratulations, you have completed the **Hedera Token Service** Hello World sequence! 🎉🎉🎉
+
+You have learnt how to:
+
+- [x] Create and mint a new fungible token on HTS
+- [x] Query the token balance
 
 ***
 
@@ -195,7 +200,7 @@ cd 04-hts-ft-sdkdir/
 git diff main..completed -- ./
 ```
 
-Alternatively, you may view the `diff`` rendered on Github:
+Alternatively, you may view the `diff` rendered on Github:
 [`hedera-dev/hello-future-world/compare/main..completed`](https://github.com/hedera-dev/hello-future-world/compare/main..completed)
 (This will show the `diff` for *all* sequences.)
 

@@ -9,11 +9,11 @@ description: >-
 
 ## What you will accomplish
 
-- ✅ Write a smart contract
-- ✅ Compile the smart contract
-- ✅ Deploy a smart contract
-- ✅ Update smart contract state
-- ✅ Query smart contract state
+- [ ] Write a smart contract
+- [ ] Compile the smart contract
+- [ ] Deploy a smart contract
+- [ ] Update smart contract state
+- [ ] Query smart contract state
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/),
 is intended to be used alongside this tutorial.
@@ -215,7 +215,7 @@ you may do so in two different ways:
 
 The `introduce` function requires a single parameter of type `string`,
 and changes the state of the smart contract to store this value.
-Enter your name (or other moniker) as the parameter.
+Enter your name (or nickname) as the parameter.
 For example, if you wish to use "bguiz", the invocation should look like this:
 
 ```js
@@ -267,7 +267,20 @@ in your browser and check that:
   its "Compiler Version" field matches the version of
   the Solidity compiler that you used (`0.8.17`)
 - (3) Under the "Recent Contract Calls" section,
-  There should be 2 transactions
+  There should be 2 transactions:
+  - (1) The transaction with the earlier timestamp (bottom) should be the deployment transaction.
+    - Navigate to this transaction by clicking on the timestamp.
+    - Under the "Contract Result" section, the "Input - Function & Args" field
+      should be a *fairly long* set of hexadecimal values.
+    - This is the EVM bytecode output by the Solidity compiler.
+    - Navigate back to the Contract page (browser `⬅` button).
+  - (2) The transaction with the later timestamp (top) should be the transaction in which the `introduce` function was invoked.
+    - Navigate to this transaction by clicking on the timestamp.
+    - Under the "Contract Result" section, the "Input - Function & Args" field
+      should be a *fairly short* set of hexadecimal values.
+    - This is the representation of the function identifier (first 8 characters),
+      and the input string value (e.g. `0x5626775697a0` for `bguiz`).
+    - Navigate back to the Contract page (browser `⬅` button).
 
 Open the URL, that was output as `myContractWriteTxExplorerUrl` above,
 in your browser and check that:
@@ -276,22 +289,20 @@ in your browser and check that:
 - (2) Its "Type" field is "ETHEREUM TRANSACTION"
 - (3) Under the "Contract Result" section,
   its "To" field matches the value of `myContractAddress`
-  - The earlier one (bottom) should be the deployment transaction.
-    Navigate to it.
-    - Under the "Contract Result" section, the "Input - Function & Args" field
-      should be a fairly long set of hexadecimal values.
-    - This is the EVM bytecode output by the Solidity compiler.
-  - The later one (top) should be the transaction in which the `introduce` function was invoked.
-    Navigate to it.
-    - Under the "Contract Result" section, the "Input - Function & Args" field
-      should be a fairly short set of hexadecimal values.
-    - This is the representation of the function identifier (first 8 characters),
-      and the input string value (e.g. `0x5626775697a0` for `bguiz`).
+
 ***
 
 ## Complete
 
-Congratulations, you have completed this Hello World sequence! 🎉🎉🎉
+Congratulations, you have completed the **Hedera Smart Contract Service** Hello World sequence! 🎉🎉🎉
+
+You have learnt how to:
+
+- [x] Write a smart contract
+- [x] Compile the smart contract
+- [x] Deploy a smart contract
+- [x] Update smart contract state
+- [x] Query smart contract state
 
 ***
 
