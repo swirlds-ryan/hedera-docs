@@ -53,11 +53,13 @@ cp ../00-create-fund-account/.env ./
 ```
 
 Next, install the dependencies using `npm`.
-Then open the script file in a code editor.
+Then open both the smart contract (Solidity file),
+and the script file in a code editor.
 
 ```shell
 npm install
 code script-hscs-smart-contract-ethersjs.js
+code my_contract.sol
 ```
 
 You will also need to install a Solidity compiler.
@@ -76,8 +78,8 @@ the executable exposed on your command line is named `solcjs`.
 
 ### Write the smart contract
 
-An almost-complete smart contract has already been prepared for you,
-and you will only need to make one modification (outlined below)
+An almost-complete smart contract has already been prepared for you, `my_contract.sol`.
+You will only need to make one modification (outlined below)
 for it to compile successfully.
 
 #### Step 1: Get name stored in mapping
@@ -154,9 +156,9 @@ Click on the "Manage" button on the right side of your newly created project.
 
 [![arkhia-init-step-05][3]][3]
 
-In the project details,
-copy the "API Key" field,
-and also copy the "JSON-RPC" field.
+In the "Services" section, under "Network", select "Hedera Testnet".
+Copy the "JSON-RPC" field.
+In the "Security" section, copy the "API Key" field.
 
 [![arkhia-init-step-06-07][4]][4]
 
@@ -176,8 +178,8 @@ RPC_URL=https://pool.arkhia.io/hedera/testnet/json-rpc/v1/ABC123
 
 ### Write the script
 
-An almost-complete script has already been prepared for you,
-and you will only need to make a few modifications (outlined below)
+An almost-complete script has already been prepared for you, `script-hscs-smart-contract-ethersjs.js`.
+You will only need to make a few modifications (outlined below)
 for it to run successfully.
 
 #### Step 2: Prepare smart contract for deployment
@@ -359,4 +361,4 @@ which *is not* what we want in this case.
   [1]: https://i.stack.imgur.com/JY5Ck.png
   [2]: https://i.stack.imgur.com/wYNj3.png
   [3]: https://i.stack.imgur.com/yhCQp.png
-  [4]: https://i.stack.imgur.com/f8A1b.png
+  [4]: https://i.stack.imgur.com/mZ4Sx.png

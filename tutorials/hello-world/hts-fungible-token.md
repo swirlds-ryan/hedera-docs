@@ -46,7 +46,7 @@ In the terminal, reuse the `.env` file by copying
 the one that you have previously created into the directory for this sequence.
 
 ```shell
-cd 04-hts-ft-sdkdir/
+cd 04-hts-ft-sdk/
 cp ../00-create-fund-account/.env ./
 ```
 
@@ -74,7 +74,7 @@ This transaction requires many properties to be set on it.
 - For fungible tokens (which are analogous to ERC20 tokens),
 set the token type to `TokenType.FungibleCommon`.
 - Set the token name and token symbol based on your name (or other moniker).
-- Set the decimal property to `2` in order to mimic "cents" on your fungible token.
+- Set the decimal property to `2`.
 - Set the initial supply to 1 million.
 
 ```js
@@ -89,6 +89,19 @@ set the token type to `TokenType.FungibleCommon`.
         .setFreezeDefault(false)
         .freezeWith(client);
 ```
+<details>
+
+<summary>HTS token create details</summary>
+
+- Token Type: Fungible tokens, declared using `TokenType.FungibleCommon`, may be thought of as analogous to *ERC20* tokens. Note that HTS also supports another token type, `TokenType.NonFungibleUnique`, whioch may be thought of as analogous to *ERC721* tokens.
+- Token Name: This is the full name of the token. For example, "Singapore Dollar".
+- Token Symbol: This is the abbreviation of the token's name. For example, "SGD".
+- Decimals: This is the number of decimal places the currency uses. For example, `2` mimic "cents", where the smallest unit of the token is 1/100th of a single token.
+- Initial Supply: This is the number units of the token to "mint" when first creating the token. Note that this is specified in the smallest units, so `1_000_000` initial supply when decimals is 2, results in `10_000` full units of the token being minted. It might be easier to think about it as "one million cents equals ten thousand dollars".
+- Treasury Account ID: This is the account that the initial supply is credited to. For example, using `accountId` would mean that your own account receives all the tokens when they are minted.
+- Admin Key: This is the account that is authorised to administrate this token. For example, using `accountKey` would mena that your own account would get to perform actions such as minting additional supply.
+
+</details>
 
 #### Step 2: Mirror Node API to query specified token balance
 

@@ -98,7 +98,7 @@ Copy the value of "HEX Encoded Private Key", and replace `ACCOUNT_PRIVATE_KEY` i
 
 From the same screen, copy the value of "Account ID", and replace `ACCOUNT_ID` in the `.env` file with it.
 
-For example, if your Account ID is `0.0.123`, and your DER-encoded private key is `0xabcd1234`, the 2 lines in your `.env` file should look like this:
+For example, if your Account ID is `0.0.123`, and your HEX-encoded private key is `0xabcd1234`, the 2 lines in your `.env` file should look like this:
 
 ```
 ACCOUNT_ID=0.0.123
