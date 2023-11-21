@@ -37,7 +37,7 @@ Also, you should have the following set up on your computer:
 
 ***
 
-## Steps
+## Get started
 
 ### Set up project
 
@@ -60,13 +60,19 @@ git clone git@github.com:hedera-dev/hello-future-world.git
 
 </details>
 
-In the terminal, make a `.env` file by copying the provided `.env.sample` file. Then open that file in a code editor, such as VS code (`code`).
+In the terminal, enter the directory for this sequence.
 
 ```shell
 cd 00-create-fund-account/
-cp .env.sample .env
-code .env
 ```
+
+Make a `.env` file by copying the provided `.env.sample` file.
+
+```shell
+cp .env.sample .env
+```
+
+Then open the `.env` file in a code editor, such as VS Code.
 
 ### Create account
 
@@ -230,6 +236,10 @@ Note that the branch names are delimited by `..`, and not by `...`, as the latte
 
 ***
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr><tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
+<tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr>
+<tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr>
+<tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr>
+</tbody></table>
 
 ***

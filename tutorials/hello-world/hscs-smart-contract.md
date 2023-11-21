@@ -27,7 +27,7 @@ Before you begin, you should have completed the "Create and Fund Account" sequen
 
 ***
 
-## Steps
+## Get started
 
 ### Set up project
 
@@ -44,23 +44,28 @@ Alternatively, you may wish to create a `.env` file
 and populate it as required.
 {% endhint %}
 
-In the terminal, reuse the `.env` file by copying
-the one that you have previously created into the directory for this sequence.
+In the terminal, enter the directory for this sequence.
 
 ```shell
 cd 03-hscs-smart-contract-ethersjs/
+```
+
+Reuse the `.env` file by copying the one that you have previously created into the directory for this sequence.
+
+```shell
 cp ../00-create-fund-account/.env ./
 ```
 
 Next, install the dependencies using `npm`.
-Then open both the smart contract (Solidity file),
-and the script file in a code editor.
 
 ```shell
 npm install
-code script-hscs-smart-contract-ethersjs.js
-code my_contract.sol
 ```
+
+Then open both these files in a code editor, such as VS Code.
+
+- `my_contract.sol`
+- `script-hscs-smart-contract-ethersjs.js`
 
 You will also need to install a Solidity compiler.
 This time use the `--global` flag.
@@ -173,6 +178,16 @@ the new line in your `.env` file should look similar to this:
 ```text
 RPC_URL=https://pool.arkhia.io/hedera/testnet/json-rpc/v1/ABC123
 ```
+
+<details>
+
+<summary>Alternative RPC configuration</summary>
+
+Arkhia is one of several different options for JSON-RPC connections.
+This tutorial covers all of the different options:
+[How to Connect to Hedera Networks Over RPC](https://docs.hedera.com/hedera/tutorials/more-tutorials/json-rpc-connections).
+
+</details>
 
 ***
 
@@ -359,13 +374,11 @@ which *is not* what we want in this case.
 
 ***
 
-<table data-card-size="large" data-view="cards">
-<thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead>
-<tbody>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
 <tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr>
 <tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr>
-</tbody>
-</table>
+<tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr>
+</tbody></table>
 
 ***
 

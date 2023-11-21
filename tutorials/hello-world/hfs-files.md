@@ -24,7 +24,7 @@ Before you begin, you should have completed the "Create and Fund Account" sequen
 
 ***
 
-## Steps
+## Get started
 
 ### Set up project
 
@@ -41,30 +41,34 @@ Alternatively, you may wish to create a `.env` file
 and populate it as required.
 {% endhint %}
 
-In the terminal, reuse the `.env` file by copying
-the one that you have previously created into the directory for this sequence.
+In the terminal, enter the directory for this sequence.
 
 ```shell
 cd 01-hfs-files-sdk/
+```
+
+Reuse the `.env` file by copying the one that you have previously created into the directory for this sequence.
+
+```shell
 cp ../00-create-fund-account/.env ./
 ```
 
 Next, install the dependencies using `npm`.
-Then open the script file in a code editor.
 
 ```shell
 npm install
-code script-hfs-files-sdk.js
 ```
 
+Then open the `script-hfs-files-sdk.js` file in a code editor, such as VS Code.
+
 You will also need a file to write onto the network.
-Copy the sample text file provided,
-and edit it to replace `YOUR_NAME` with your name.
+Copy the sample text file provided.
 
 ```shell
 cp my-file.txt.sample my-file.txt
-code my-file.txt
 ```
+
+Edit `my-file.txt` to replace `YOUR_NAME` with your name (or nickname) in a code editor.
 
 ***
 
@@ -191,10 +195,10 @@ which *is not* what we want in this case.
 
 ***
 
-<table data-card-size="large" data-view="cards">
-<thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead>
-<tbody>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
 <tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr>
 <tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr>
-</tbody>
-</table>
+<tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr>
+</tbody></table>
+
+***
