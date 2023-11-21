@@ -9,7 +9,7 @@ description: >-
 ## What you will accomplish
 
 * [ ] Create an account on Hedera Testnet
-* [ ] Fund this new account with tHBAR
+* [ ] Fund this new account with Testnet HBAR
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
@@ -84,19 +84,19 @@ If you already have an account on the [Hedera Portal](https://portal.hedera.com)
 
 Visit the [Hedera Portal](https://portal.hedera.com), and create a Testnet account.
 
-[![localhost-init-step-03](https://i.stack.imgur.com/tgkvS.png)](https://i.stack.imgur.com/tgkvS.png)
+[![](../../.gitbook/assets/hello-world--account--portal-01-create-account.png)](../../.gitbook/assets/hello-world--account--portal-01-create-account.png "Hedera Portal - 01 - Create Account")
 
 Copy-paste the confirmation code sent to your email.
 
-[![localhost-init-step-04](https://i.stack.imgur.com/4H9XT.png)](https://i.stack.imgur.com/4H9XT.png)
+[![](../../.gitbook/assets/hello-world--account--portal-02-email-verification.png)](../../.gitbook/assets/hello-world--account--portal-02-email-verification.png "Hedera Portal - 02 - Email Verification")
 
 Fill out this form.
 
-[![localhost-init-step-05](https://i.stack.imgur.com/atW69.png)](https://i.stack.imgur.com/atW69.png)
+[![](../../.gitbook/assets/hello-world--account--portal-03-profile-form.png)](../../.gitbook/assets/hello-world--account--portal-03-profile-form.png "Hedera Portal - 03 - Profile Form"
 
 In the top-left select Hedera Testnet from the drop-down.
 
-[![localhost-init-step-07](https://i.stack.imgur.com/2A2ua.png)](https://i.stack.imgur.com/2A2ua.png)
+[![](../../.gitbook/assets/hello-world--account--portal-04-select-network.png)](../../.gitbook/assets/hello-world--account--portal-04-select-network.png "Hedera Portal - 04 - Select Network")
 
 </details>
 
@@ -113,7 +113,7 @@ To follow along, use **Account ECDSA**.
 
 Copy the value of "HEX Encoded Private Key", and replace `ACCOUNT_PRIVATE_KEY` in the `.env` file with it.
 
-[![localhost-init-step-08](https://i.stack.imgur.com/PrQbt.png)](https://i.stack.imgur.com/PrQbt.png)
+[![](../../.gitbook/assets//hello-world--account--portal-05-copy-fields.png)](../../.gitbook/assets/hello-world--account--portal-05-copy-fields.png "Hedera Portal - 05 - Copy Fields")
 
 From the same screen, copy the value of "Account ID", and replace `ACCOUNT_ID` in the `.env` file with it.
 
@@ -152,7 +152,7 @@ Now the `client` instance represents and operates your account.
 
 #### Step 2: Obtain the balance of the account
 
-Use the `AccountBalanceQuery` method to obtain the tHBAR balance of your account.
+Use the `AccountBalanceQuery` method to obtain the Testnet HBAR balance of your account.
 
 ```javascript
     const accountBalance = await new AccountBalanceQuery()
@@ -162,7 +162,7 @@ Note that the return value is an object, and needs to be parsed.
 
 #### Step 3: Convert balance result object to Hbars
 
-Parse that return value to extract its tHBAR balance, so that you may convert into a string for display purposes.
+Parse that return value to extract its Testnet HBAR balance, so that you may convert into a string for display purposes.
 
 ```javascript
     const accountBalanceHbars = accountBalance.hbars.toBigNumber();
@@ -179,15 +179,17 @@ node script-create-fund-account.js
 You should see output similar to the following:
 
 ```
-accountId: 0.0.1186
+accountId: 0.0.1201
 accountBalanceTinybars: 10,000.00000000
-accountExplorerUrl: https://hashscan.io/testnet/account/0.0.1186
+accountExplorerUrl: https://hashscan.io/testnet/account/0.0.1201
 ```
 
-Open the URL, that was output as `accountExplorerUrl` above, in your browser and check that:
+Open `accountExplorerUrl` in your browser and check that:
 
-* (1) The accounts exists.
-* (2) The balance matches.
+* (1) The accounts exists, and its "account ID" should match `accountId`.
+* (2) The "balances" should match `accountBalanceTinybars`.
+
+<img src="../../.gitbook/assets/hello-world--account--account.drawing.svg" alt="Account in Hashscan, with annotated items to check." class="gitbook-drawing">
 
 ***
 
@@ -198,7 +200,7 @@ Congratulations, you have completed the **create and fund account** Hello World 
 You have learnt how to:
 
 * [x] Create an account on Hedera Testnet
-* [x] Fund this new account with tHBAR
+* [x] Fund this new account with Testnet HBAR
 
 ***
 

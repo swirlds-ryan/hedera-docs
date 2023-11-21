@@ -134,6 +134,11 @@ The string, including substitution, should look like this:
 You can explore the Mirror Node APIs interactively via its Swagger page:
 [Hedera Testnet Mirror Node REST API](https://testnet.mirrornode.hedera.com/api/v1/docs/#/).
 
+You can perform the same Mirror Node API query as `accountBalanceFetchApiUrl` above.
+This is what the relevant part of the Swagger page would look like when doing so:
+
+![](../../.gitbook/assets/hello-world--hts--mirror-node-swagger.drawing.svg "Mirror Node API Swagger for account tokens, with annotations.")
+
 You can learn more about the Mirror Nodes via its documentation:
 [REST API](https://docs.hedera.com/hedera/sdks-and-apis/rest-api).
 
@@ -159,13 +164,14 @@ accountTokenBalance: 1000000
 accountBalanceFetchApiUrl: https://testnet.mirrornode.hedera.com/api/v1/accounts/0.0.1201/tokens?token.id=0.0.5878530&limit=1&order=desc
 ```
 
-Open the URL, that was output as `tokenExplorerUrl` above,
-in your browser and check that:
+Open `tokenExplorerUrl` in your browser and check that:
 
-- (1) The token should exist.
+- (1) The token should exist, and its "token ID" should match `tokenId`.
 - (2) The "name" and "symbol" should be shown as the same values derived from your name (or nickname) that you chose earlier.
 - (3) The "treasury account" should match `accountId`.
 - (4) Both the "total supply" and "initial supply" should be `10,000`.
+
+<img src="../../.gitbook/assets/hello-world--hts--token.drawing.svg" alt="HTS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
 
 {% hint style="info" %}
 Note that "total supply" and "initial supply" are not `1,000,000` because of the 2 decimal places configured.

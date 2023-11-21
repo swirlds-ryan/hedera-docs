@@ -127,11 +127,12 @@ networkFileContents: Hello future! - bguiz
 
 ```
 
-Open the URL, that was output as `txExplorerUrl` above,
-in your browser and check that:
+Open `txExplorerUrl` in your browser and check that:
 
 - (1) The transaction exists
 - (2) The "type" is shown as "FILE CREATE"
+
+<img src="../../.gitbook/assets/hello-world--hfs--transaction.drawing.svg" alt="HFS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
 
 ***
 
