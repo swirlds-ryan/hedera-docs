@@ -9,8 +9,8 @@ description: >-
 
 ## What you will accomplish
 
-- [ ] Upload a file onto HFS
-- [ ] Retrieve the file from HFS
+* [ ] Upload a file onto HFS
+* [ ] Retrieve the file from HFS
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/),
 is intended to be used alongside this tutorial.
@@ -41,7 +41,8 @@ Alternatively, you may wish to create a `.env` file
 and populate it as required.
 {% endhint %}
 
-In the terminal, enter the directory for this sequence.
+In the terminal, from the `hello-future-world` directory,
+enter the subdirectory for this sequence.
 
 ```shell
 cd 01-hfs-files-sdk/
@@ -129,8 +130,8 @@ networkFileContents: Hello future! - bguiz
 
 Open `txExplorerUrl` in your browser and check that:
 
-- (1) The transaction exists
-- (2) The "type" is shown as "FILE CREATE"
+* (1) The transaction exists
+* (2) The "type" is shown as "FILE CREATE"
 
 <img src="../../.gitbook/assets/hello-world--hfs--transaction.drawing.svg" alt="HFS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
 
@@ -142,8 +143,8 @@ Congratulations, you have completed the **Hedera File Service** Hello World sequ
 
 You have learnt how to:
 
-- [x] Upload a file onto HFS
-- [x] Retrieve the file from HFS
+* [x] Upload a file onto HFS
+* [x] Retrieve the file from HFS
 
 ***
 

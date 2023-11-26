@@ -23,17 +23,21 @@ Before you begin, you should be familiar with the following:
 
 Also, you should have the following set up on your computer:
 
+* [ ] POSIX-compliant shell
+  * For Linux & Mac: The shell that ships with the operating system will work. Either `bash` or `zsh` will work.
+  * For Windows: The shells that ship with the operating system (`cmd.exe`, `powershell.exe`) _will not_ work.
+    * Recommended: `git-bash` which ships with `git-for-windows`. [Install Git for Windows (Git for Windows)](https://gitforwindows.org/)
+    * Recommended (alternative): Windows Subsystem for Linux. [Install WSL (Microsoft)](https://learn.microsoft.com/en-us/windows/wsl/install)
 * [ ] `git` installed
   * Minimum version: 2.37
   * [Install Git (Github)](https://github.com/git-guides/install-git)
+* [ ] A code editor or IDE
+  * Recommended: VS Code. [Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
 * [ ] NodeJs + `npm` installed
   * Minimum version of NodeJs: 18
   * Minimum version of `npm`: 9.5
   * Recommended for Linux & Mac: [`nvm`](https://github.com/nvm-sh/nvm)
   * Recommended for Windows: [`nvm-windows`](https://github.com/coreybutler/nvm-windows)
-* [ ] POSIX-compliant shell
-  * For Linux & Mac: The shell that ships with the operating system will work. Either `bash` or `zsh` will work.
-  * For Windows: The shell that ships with the operating system (`cmd.exe`, `powershell.exe`) _will not_ work. Recommended alternatives: WSL/2, or `git-bash` which ships with `git-for-windows`.
 
 ***
 
@@ -60,7 +64,8 @@ git clone git@github.com:hedera-dev/hello-future-world.git
 
 </details>
 
-In the terminal, enter the directory for this sequence.
+In the terminal, from the `hello-future-world` directory,
+enter the subdirectory for this sequence.
 
 ```shell
 cd 00-create-fund-account/

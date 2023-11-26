@@ -9,11 +9,11 @@ description: >-
 
 ## What you will accomplish
 
-- [ ] Write a smart contract
-- [ ] Compile the smart contract
-- [ ] Deploy a smart contract
-- [ ] Update smart contract state
-- [ ] Query smart contract state
+* [ ] Write a smart contract
+* [ ] Compile the smart contract
+* [ ] Deploy a smart contract
+* [ ] Update smart contract state
+* [ ] Query smart contract state
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/),
 is intended to be used alongside this tutorial.
@@ -44,7 +44,8 @@ Alternatively, you may wish to create a `.env` file
 and populate it as required.
 {% endhint %}
 
-In the terminal, enter the directory for this sequence.
+In the terminal, from the `hello-future-world` directory,
+enter the subdirectory for this sequence.
 
 ```shell
 cd 03-hscs-smart-contract-ethersjs/
@@ -64,8 +65,8 @@ npm install
 
 Then open both these files in a code editor, such as VS Code.
 
-- `my_contract.sol`
-- `script-hscs-smart-contract-ethersjs.js`
+* `my_contract.sol`
+* `script-hscs-smart-contract-ethersjs.js`
 
 You will also need to install a Solidity compiler.
 This time use the `--global` flag.
@@ -163,9 +164,9 @@ Click on the "Manage" button on the right side of your newly created project.
 
 Now you should see the project details.
 
-- (1) In the "Services" section, under "Network", select "Hedera Testnet".
-- (2) Copy the "JSON-RPC" field.
-- (3) In the "Security" section, copy the "API Key" field.
+* (1) In the "Services" section, under "Network", select "Hedera Testnet".
+* (2) Copy the "JSON-RPC" field.
+* (3) In the "Security" section, copy the "API Key" field.
 
 <img src="../../.gitbook/assets/hello-world--hscs--arkhia-04-project-details.drawing.svg" alt="Arkhia RPC Configuration - 04 - Project Details" class="gitbook-drawing">
 
@@ -227,8 +228,8 @@ This has already been done for you in the script.
 When invoking functions in a smart contract,
 you may do so in two different ways:
 
-- (1) With a transaction → Smart contract state may be changed.
-- (2) Without a transaction → Smart contract state may be queried, but may not be changed.
+* (1) With a transaction → Smart contract state may be changed.
+* (2) Without a transaction → Smart contract state may be queried, but may not be changed.
 
 The `introduce` function requires a single parameter of type `string`,
 and changes the state of the smart contract to store this value.
@@ -278,25 +279,25 @@ myContractQueryResult: Hello future - bguiz
 
 Open `myContractExplorerUrl` in your browser and check that:
 
-- (1) The contract exists
-- (2) Under the "Contract Details" section,
+* (1) The contract exists
+* (2) Under the "Contract Details" section,
   its "Compiler Version" field matches the version of
   the Solidity compiler that you used (`0.8.17`)
-- (3) Under the "Recent Contract Calls" section,
+* (3) Under the "Recent Contract Calls" section,
   There should be 2 transactions:
-  - (A) The transaction with the earlier timestamp (bottom) should be the deployment transaction.
-    - Navigate to this transaction by clicking on the timestamp.
-    - Under the "Contract Result" section, the "Input - Function & Args" field
+  * (A) The transaction with the earlier timestamp (bottom) should be the deployment transaction.
+    * Navigate to this transaction by clicking on the timestamp.
+    * Under the "Contract Result" section, the "Input - Function & Args" field
       should be a *fairly long* set of hexadecimal values.
-    - This is the EVM bytecode output by the Solidity compiler.
-    - Navigate back to the Contract page (browser `⬅` button).
-  - (B) The transaction with the later timestamp (top) should be the transaction in which the `introduce` function was invoked.
-    - Navigate to this transaction by clicking on the timestamp.
-    - Under the "Contract Result" section, the "Input - Function & Args" field
+    * This is the EVM bytecode output by the Solidity compiler.
+    * Navigate back to the Contract page (browser `⬅` button).
+  * (B) The transaction with the later timestamp (top) should be the transaction in which the `introduce` function was invoked.
+    * Navigate to this transaction by clicking on the timestamp.
+    * Under the "Contract Result" section, the "Input - Function & Args" field
       should be a *fairly short* set of hexadecimal values.
-    - This is the representation of the function identifier (first 8 characters),
+    * This is the representation of the function identifier (first 8 characters),
       and the input string value (e.g. `0x5626775697a0` for `bguiz`).
-    - Navigate back to the Contract page (browser `⬅` button).
+    * Navigate back to the Contract page (browser `⬅` button).
 
 <img src="../../.gitbook/assets/hello-world--hscs--contract.drawing.svg" alt="HSCS contract in Hashscan, with annotated items to check." class="gitbook-drawing">
 
@@ -304,11 +305,11 @@ Open `myContractWriteTxExplorerUrl` in your browser.
 Note that this should be the same page as "the transaction with the later timestamp".
 Check that:
 
-- (1) The transaction exists
-- (2) Its "Type" field is "ETHEREUM TRANSACTION"
-- (3) Under the "Contract Result" section,
+* (1) The transaction exists
+* (2) Its "Type" field is "ETHEREUM TRANSACTION"
+* (3) Under the "Contract Result" section,
   its "From" field matches the value of `accountId`
-- (4) Under the "Contract Result" section,
+* (4) Under the "Contract Result" section,
   its "To" field matches the value of `myContractAddress`
 
 <img src="../../.gitbook/assets/hello-world--hscs--transaction.drawing.svg" alt="HSCS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
@@ -321,11 +322,11 @@ Congratulations, you have completed the **Hedera Smart Contract Service** Hello 
 
 You have learnt how to:
 
-- [x] Write a smart contract
-- [x] Compile the smart contract
-- [x] Deploy a smart contract
-- [x] Update smart contract state
-- [x] Query smart contract state
+* [x] Write a smart contract
+* [x] Compile the smart contract
+* [x] Deploy a smart contract
+* [x] Update smart contract state
+* [x] Query smart contract state
 
 ***
 

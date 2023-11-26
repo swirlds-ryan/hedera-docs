@@ -9,8 +9,8 @@ description: >-
 
 ## What you will accomplish
 
-- [ ] Create and mint a new fungible token on HTS
-- [ ] Query the token balance
+* [ ] Create and mint a new fungible token on HTS
+* [ ] Query the token balance
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/),
 is intended to be used alongside this tutorial.
@@ -42,7 +42,8 @@ Alternatively, you may wish to create a `.env` file
 and populate it as required.
 {% endhint %}
 
-In the terminal, enter the directory for this sequence.
+In the terminal, from the `hello-future-world` directory,
+enter the subdirectory for this sequence.
 
 ```shell
 cd 04-hts-ft-sdk/
@@ -75,11 +76,11 @@ for it to run successfully.
 To create a new HTS token, we will use `TokenCreateTransaction`.
 This transaction requires many properties to be set on it.
 
-- For fungible tokens (which are analogous to ERC20 tokens),
+* For fungible tokens (which are analogous to ERC20 tokens),
 set the token type to `TokenType.FungibleCommon`.
-- Set the token name and token symbol based on your name (or nickname).
-- Set the decimal property to `2`.
-- Set the initial supply to 1 million.
+* Set the token name and token symbol based on your name (or nickname).
+* Set the decimal property to `2`.
+* Set the initial supply to 1 million.
 
 ```js
     let tokenCreateTx = await new TokenCreateTransaction()
@@ -97,13 +98,13 @@ set the token type to `TokenType.FungibleCommon`.
 
 <summary>HTS token create details</summary>
 
-- Token Type: Fungible tokens, declared using `TokenType.FungibleCommon`, may be thought of as analogous to *ERC20* tokens. Note that HTS also supports another token type, `TokenType.NonFungibleUnique`, whioch may be thought of as analogous to *ERC721* tokens.
-- Token Name: This is the full name of the token. For example, "Singapore Dollar".
-- Token Symbol: This is the abbreviation of the token's name. For example, "SGD".
-- Decimals: This is the number of decimal places the currency uses. For example, `2` mimics "cents", where the smallest unit of the token is 0.01 (1/100) of a single token.
-- Initial Supply: This is the number units of the token to "mint" when first creating the token. Note that this is specified in the smallest units, so `1_000_000` initial supply when decimals is 2, results in `10_000` full units of the token being minted. It might be easier to think about it as "one million cents equals ten thousand dollars".
-- Treasury Account ID: This is the account that the initial supply is credited to. For example, using `accountId` would mean that your own account receives all the tokens when they are minted.
-- Admin Key: This is the account that is authorised to administrate this token. For example, using `accountKey` would mean that your own account would get to perform actions such as minting additional supply.
+* Token Type: Fungible tokens, declared using `TokenType.FungibleCommon`, may be thought of as analogous to *ERC20* tokens. Note that HTS also supports another token type, `TokenType.NonFungibleUnique`, whioch may be thought of as analogous to *ERC721* tokens.
+* Token Name: This is the full name of the token. For example, "Singapore Dollar".
+* Token Symbol: This is the abbreviation of the token's name. For example, "SGD".
+* Decimals: This is the number of decimal places the currency uses. For example, `2` mimics "cents", where the smallest unit of the token is 0.01 (1/100) of a single token.
+* Initial Supply: This is the number units of the token to "mint" when first creating the token. Note that this is specified in the smallest units, so `1_000_000` initial supply when decimals is 2, results in `10_000` full units of the token being minted. It might be easier to think about it as "one million cents equals ten thousand dollars".
+* Treasury Account ID: This is the account that the initial supply is credited to. For example, using `accountId` would mean that your own account receives all the tokens when they are minted.
+* Admin Key: This is the account that is authorised to administrate this token. For example, using `accountKey` would mean that your own account would get to perform actions such as minting additional supply.
 
 </details>
 
@@ -116,9 +117,9 @@ it will have the entire initial supply of the token.
 You will want to use the Mirror Node API
 with the path `/api/v1/accounts/{idOrAliasOrEvmAddress}/tokens`
 for this task.
-- Specify `accountId` within the URL path
-- Specify `tokenId` as the `token.id` query parameter
-- Specify `1` as the `limit` query parameter (you are only interested in one token)
+* Specify `accountId` within the URL path
+* Specify `tokenId` as the `token.id` query parameter
+* Specify `1` as the `limit` query parameter (you are only interested in one token)
 
 The string, including substitution, should look like this:
 
@@ -166,10 +167,10 @@ accountBalanceFetchApiUrl: https://testnet.mirrornode.hedera.com/api/v1/accounts
 
 Open `tokenExplorerUrl` in your browser and check that:
 
-- (1) The token should exist, and its "token ID" should match `tokenId`.
-- (2) The "name" and "symbol" should be shown as the same values derived from your name (or nickname) that you chose earlier.
-- (3) The "treasury account" should match `accountId`.
-- (4) Both the "total supply" and "initial supply" should be `10,000`.
+* (1) The token should exist, and its "token ID" should match `tokenId`.
+* (2) The "name" and "symbol" should be shown as the same values derived from your name (or nickname) that you chose earlier.
+* (3) The "treasury account" should match `accountId`.
+* (4) Both the "total supply" and "initial supply" should be `10,000`.
 
 <img src="../../.gitbook/assets/hello-world--hts--token.drawing.svg" alt="HTS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
 
@@ -185,8 +186,8 @@ Congratulations, you have completed the **Hedera Token Service** Hello World seq
 
 You have learnt how to:
 
-- [x] Create and mint a new fungible token on HTS
-- [x] Query the token balance
+* [x] Create and mint a new fungible token on HTS
+* [x] Query the token balance
 
 ***
 
