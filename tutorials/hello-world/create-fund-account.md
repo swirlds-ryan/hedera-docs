@@ -11,8 +11,6 @@ description: >-
 * [ ] Create an account on Hedera Testnet
 * [ ] Fund this new account with Testnet HBAR
 
-The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
-
 ***
 
 ## Prerequisites
@@ -30,7 +28,7 @@ Also, you should have the following set up on your computer:
     * Recommended (alternative): Windows Subsystem for Linux. [Install WSL (Microsoft)](https://learn.microsoft.com/en-us/windows/wsl/install)
 * [ ] `git` installed
   * Minimum version: 2.37
-  * [Install Git (Github)](https://github.com/git-guides/install-git)
+  * Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
 * [ ] A code editor or IDE
   * Recommended: VS Code. [Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
 * [ ] NodeJs + `npm` installed
@@ -38,6 +36,55 @@ Also, you should have the following set up on your computer:
   * Minimum version of `npm`: 9.5
   * Recommended for Linux & Mac: [`nvm`](https://github.com/nvm-sh/nvm)
   * Recommended for Windows: [`nvm-windows`](https://github.com/coreybutler/nvm-windows)
+
+<details>
+
+<summary>Check your prerequisites set up</summary>
+
+Open your terminal, and enter the following commands.
+
+```shell
+bash --version
+zsh --version
+git --version
+code --version
+node --version
+npm --version
+```
+
+Each of these commands should output some text that includes a version number, for example:
+
+```text
+bash --version
+GNU bash, version 3.2.57(1)-release (arm64-apple-darwin22)
+Copyright (C) 2007 Free Software Foundation, Inc.
+
+zsh --version
+zsh 5.9 (x86_64-apple-darwin22.0)
+
+git --version
+git version 2.39.2 (Apple Git-143)
+
+code --version
+1.81.1
+6c3e3dba23e8fadc360aed75ce363ba185c49794
+arm64
+
+node --version
+v20.6.1
+
+npm --version
+9.8.1
+
+```
+
+If the output contains text similar to `command not found`, please install that item.
+
+If the version number that is output is **lower** than the required versions, please re-install or update that item.
+
+If the version number that is output is **same or higher** than the required versions, you have met the prequisites! 🎉
+
+</details>
 
 ***
 
@@ -68,6 +115,12 @@ In the terminal, from the `hello-future-world` directory, enter the subdirectory
 
 ```shell
 cd 00-create-fund-account/
+```
+
+Install the dependencies using `npm`.
+
+```shell
+npm install
 ```
 
 Make a `.env` file by copying the provided `.env.sample` file.
@@ -130,17 +183,15 @@ ACCOUNT_PRIVATE_KEY=0xabcd1234
 
 🎉 Now you are ready to start using your Hedera Testnet account from the portal within script files on your computer! 🎉
 
+{% hint style="info" %}
+Be sure to save your files before moving on to the next step!
+{% endhint %}
+
 ***
 
 ### Write the script
 
 An almost-complete script has already been prepared for you, and you will only need to make a few modifications (outlined below) for it to run successfully.
-
-First, install the dependencies using `npm`.
-
-```shell
-npm install
-```
 
 Then open the script file, `script-create-fund-account.js`, in a code editor.
 
@@ -153,6 +204,20 @@ Initialize the `client` instance by invoking the `setOperator` method, and passi
 ```
 
 Now the `client` instance represents and operates your account.
+
+{% hint style="info" %}
+Look for a comment in the code to locate the specific lines of code which you will need to edit. For example, in this step, look for this:
+
+```javascript
+    // Step (1) in the accompanying tutorial
+```
+
+You will need to delete the inline comment that looks like this: `/* ... */`. Replace it with the correct code. For example, in this step, insert this:
+
+```javascript
+accountId, accountKey
+```
+{% endhint %}
 
 #### Step 2: Obtain the balance of the account
 
@@ -174,7 +239,7 @@ Parse that return value to extract its Testnet HBAR balance, so that you may con
 
 ### Run the script
 
-Run the script using the following command:
+In the terminal, run the script using the following command:
 
 ```shell
 node script-create-fund-account.js
@@ -201,7 +266,7 @@ Open `accountExplorerUrl` in your browser and check that:
 
 Congratulations, you have completed the **create and fund account** Hello World sequence! 🎉🎉🎉
 
-You have learnt how to:
+You have learned how to:
 
 * [x] Create an account on Hedera Testnet
 * [x] Fund this new account with Testnet HBAR
@@ -219,6 +284,8 @@ Now that you have an account on Hedera Testnet, and it is funded, you can intera
 <details>
 
 <summary>Skip to final state</summary>
+
+The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
 To skip ahead to the final state, use the `completed` branch. This gives you the final state with which you can compare your implementation to the completed steps of the tutorial.
 

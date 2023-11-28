@@ -11,8 +11,6 @@ description: >-
 * [ ] Create and mint a new fungible token on HTS
 * [ ] Query the token balance
 
-The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
-
 ***
 
 ## Prerequisites
@@ -74,20 +72,15 @@ To create a new HTS token, we will use `TokenCreateTransaction`. This transactio
 * Set the initial supply to 1 million.
 
 ```js
-    let tokenCreateTx = await new TokenCreateTransaction()
         .setTokenType(TokenType.FungibleCommon)
         .setTokenName("bguiz coin")
         .setTokenSymbol("BGZ")
         .setDecimals(2)
         .setInitialSupply(1_000_000)
-        .setTreasuryAccountId(accountId)
-        .setAdminKey(accountKey)
-        .setFreezeDefault(false)
-        .freezeWith(client);
 ```
 <details>
 
-<summary>HTS token create details</summary>
+<summary>Key terminology for HTS token create transaction</summary>
 
 * Token Type: Fungible tokens, declared using `TokenType.FungibleCommon`, may be thought of as analogous to *ERC20* tokens. Note that HTS also supports another token type, `TokenType.NonFungibleUnique`, which may be thought of as analogous to *ERC721* tokens.
 * Token Name: This is the full name of the token. For example, "Singapore Dollar".
@@ -109,11 +102,10 @@ You will want to use the Mirror Node API with the path `/api/v1/accounts/{idOrAl
 * Specify `tokenId` as the `token.id` query parameter
 * Specify `1` as the `limit` query parameter (you are only interested in one token)
 
-The string, including substitution, should look like this:
+Using string interpolation, construct `accountBalanceFetchApiUrl` like so:
 
 ```js
-    const accountBalanceFetchApiUrl =
-        `https://testnet.mirrornode.hedera.com/api/v1/accounts/${accountId}/tokens?token.id=${tokenId}&limit=1&order=desc`;
+    const accountBalanceFetchApiUrl = `https://testnet.mirrornode.hedera.com/api/v1/accounts/${accountId}/tokens?token.id=${tokenId}&limit=1&order=desc`;
 ```
 
 <details>
@@ -137,7 +129,7 @@ You can learn more about the Mirror Nodes via its documentation:
 
 ### Run the script
 
-Run the script using the following command:
+In the terminal, run the script using the following command:
 
 ```shell
 node script-hts-ft.js
@@ -172,7 +164,7 @@ Note that "total supply" and "initial supply" are not displayed as `1,000,000` b
 
 Congratulations, you have completed the **Hedera Token Service** Hello World sequence! 🎉🎉🎉
 
-You have learnt how to:
+You have learned how to:
 
 * [x] Create and mint a new fungible token on HTS
 * [x] Query the token balance
@@ -190,6 +182,8 @@ Now that you have completed this Hello World sequence, you have interacted with 
 <details>
 
 <summary>Skip to final state</summary>
+
+The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
 To skip ahead to the final state, use the `completed` branch. This gives you the final state with which you can compare your implementation to the completed steps of the tutorial.
 

@@ -14,8 +14,6 @@ description: >-
 * [ ] Update smart contract state
 * [ ] Query smart contract state
 
-The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
-
 ***
 
 ## Prerequisites
@@ -66,6 +64,8 @@ npm install --global solc@0.8.17
 ```
 
 {% hint style="info" %}
+[Solidity](https://docs.soliditylang.org/) is a programming language that was designed specifically for writing smart contracts in. The Solidity compiler outputs bytecode that can be run by an [Ethereum Virtual Machine (EVM)](https://ethereum.org/en/developers/docs/evm/) implementation.
+
 Note that although the `npm` package is named `solc`, the executable exposed on your command line is named `solcjs`.
 {% endhint %}
 
@@ -94,11 +94,7 @@ Within the `greet()` function, we would like to access the `names` mapping and r
 
 ### Compile the smart contract
 
-Once you have completed writing the smart contract in Solidity, you are not able to deploy it onto the network just yet. You will need to compile it first, using the Solidity compiler installed earlier.
-
-{% hint style="info" %}
-HSCS executes a virtual machine - the Ethereum Virtual Machine (EVM) - which runs the smart contracts. The EVM executes EVM bytecode that is deployed onto the network. The Solidity compiler outputs Solidity bytecode, which is is deployed to the network. Note that compiled bytecode and deployed bytecode, while _similar_, are not the same.
-{% endhint %}
+Once you have completed writing the smart contract in Solidity, you will need to compile it, using the Solidity compiler installed earlier.
 
 Invoke the compiler on your Solidity file. Then list files in the current directory.
 
@@ -116,9 +112,10 @@ my_contract_sol_MyContract.bin
 ```
 
 {% hint style="info" %}
-The `.abi` file contains JSON, and describes the interface used to interact with the smart contract.
+- The `.abi` file contains JSON, and describes the interface used to interact with the smart contract.
+- The `.bin` file contains EVM bytecode, and this is used in the deployment of the smart contract.
 
-The `.bin` file contains EVM bytecode, and this is used in the deployment of the smart contract. Note that this is not intended to be human readable.
+Note that while the `.abi` file is human readable, the `.bin` file is *not intended* to be human readable.
 {% endhint %}
 
 ***
@@ -127,7 +124,7 @@ The `.bin` file contains EVM bytecode, and this is used in the deployment of the
 
 Sign up for an account at [`auth.arkhia.io/signup`](https://auth.arkhia.io/signup).
 
-Click on link in your confirmation email.
+If prompted to do so, click on the link in your confirmation email.
 
 Click on the "create project" button in the top-right corner of the Arkhia dashboard.
 
@@ -149,9 +146,9 @@ Now you should see the project details.
 
 <img src="../../.gitbook/assets/hello-world--hscs--arkhia-04-project-details.drawing.svg" alt="Arkhia RPC Configuration - 04 - Project Details" class="gitbook-drawing">
 
-Create a new line in the `.env` file with the key as `YOUR_JSON_RPC_URL`, and with the "JSON-RPC" value followed by the "API key" value.
+In the `.env` file, edit the property with the key `RPC_URL`, replacing `YOUR_JSON_RPC_URL` with the "JSON-RPC" value followed by the "API key" value that you have just copied.
 
-For example, if the API key field is `ABC123`, and the JSON-RPC field is `https://pool.arkhia.io/hedera/testnet/json-rpc/v1`, the new line in your `.env` file should look similar to this:
+For example, if the API key field is `ABC123`, and the JSON-RPC field is `https://pool.arkhia.io/hedera/testnet/json-rpc/v1`, the line in your `.env` file should look like to this:
 
 ```
 RPC_URL=https://pool.arkhia.io/hedera/testnet/json-rpc/v1/ABC123
@@ -218,7 +215,7 @@ Invoke the `greet` function and save its response to a variable, `myContractQuer
 
 ### Run the script
 
-Run the script using the following command:
+In the terminal, run the script using the following command:
 
 ```shell
 node script-hscs-smart-contract-ethersjs.js
@@ -280,7 +277,7 @@ Check that:
 
 Congratulations, you have completed the **Hedera Smart Contract Service** Hello World sequence! 🎉🎉🎉
 
-You have learnt how to:
+You have learned how to:
 
 * [x] Write a smart contract
 * [x] Compile the smart contract
@@ -303,6 +300,8 @@ You may also wish to check out the more detailed [HSCS workshop](https://docs.he
 <details>
 
 <summary>Skip to final state</summary>
+
+The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
 To skip ahead to the final state, use the `completed` branch. This gives you the final state with which you can compare your implementation to the completed steps of the tutorial.
 

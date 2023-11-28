@@ -11,8 +11,6 @@ description: >-
 * [ ] Upload a file onto HFS
 * [ ] Retrieve the file from HFS
 
-The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
-
 ***
 
 ## Prerequisites
@@ -69,13 +67,13 @@ Edit `my-file.txt` to replace `YOUR_NAME` with your name (or nickname) in a code
 
 ### Write the script
 
-An almost-complete script has already been prepared for you, and you will only need to make a few modifications (outlined below) for it to run successfully.
+An almost-complete script has already been prepared for you, `script-hfs-files-sdk.js`, and you will only need to make a few modifications (outlined below) for it to run successfully.
 
 #### Step 1: File create transaction
 
-The contents of `my-file.txt` have been read from disk, and stored in a `Buffer`, `localFileContents`.
+The contents of `my-file.txt` have been read from disk, and stored in a `Buffer` named `localFileContents`.
 
-Set the contents of this in `FileCreateTransaction`, so that your file is written onto the network.
+Set the contents of `localFileContents` in `FileCreateTransaction`, to write your file onto Hedera Testnet.
 
 ```js
         .setContents(localFileContents.toString())
@@ -83,9 +81,7 @@ Set the contents of this in `FileCreateTransaction`, so that your file is writte
 
 #### Step 2: File contents query
 
-After the `FileCreateTransaction` has been executed, the response contains a file ID.
-
-You will be reading this file back from the network, and check that it has worked, and its contents are the same what you have on disk.
+After the `FileCreateTransaction` has been executed, the response will contain a file ID. Read this file from the network, by querying it.
 
 Set the file ID in `FileContentsQuery`.
 
@@ -97,7 +93,7 @@ Set the file ID in `FileContentsQuery`.
 
 ### Run the script
 
-Run the script using the following command:
+In the terminal, run the script using the following command:
 
 ```shell
 node script-hfs-files-sdk.js
@@ -115,6 +111,8 @@ networkFileContents: Hello future! - bguiz
 
 ```
 
+To verify that both the `FileCreateTransaction` and `FileContentsQuery` have worked, check that `localFileContents` and `networkFileContents` are the same. This indicates that what has been stored on Hedera Testnet is the same as what you have on disk.
+
 Open `txExplorerUrl` in your browser and check that:
 
 * (1) The transaction exists
@@ -128,7 +126,7 @@ Open `txExplorerUrl` in your browser and check that:
 
 Congratulations, you have completed the **Hedera File Service** Hello World sequence! 🎉🎉🎉
 
-You have learnt how to:
+You have learned how to:
 
 * [x] Upload a file onto HFS
 * [x] Retrieve the file from HFS
@@ -146,6 +144,8 @@ Now that you have completed this Hello World sequence, you have interacted with 
 <details>
 
 <summary>Skip to final state</summary>
+
+The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
 To skip ahead to the final state, use the `completed` branch. This gives you the final state with which you can compare your implementation to the completed steps of the tutorial.
 
