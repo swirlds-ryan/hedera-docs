@@ -64,8 +64,7 @@ git clone git@github.com:hedera-dev/hello-future-world.git
 
 </details>
 
-In the terminal, from the `hello-future-world` directory,
-enter the subdirectory for this sequence.
+In the terminal, from the `hello-future-world` directory, enter the subdirectory for this sequence.
 
 ```shell
 cd 00-create-fund-account/
@@ -191,7 +190,7 @@ accountExplorerUrl: https://hashscan.io/testnet/account/0.0.1201
 
 Open `accountExplorerUrl` in your browser and check that:
 
-* (1) The accounts exists, and its "account ID" should match `accountId`.
+* (1) The account exists, and its "account ID" should match `accountId`.
 * (2) The "balances" should match `accountBalanceTinybars`.
 
 <img src="../../.gitbook/assets/hello-world--account--account.drawing.svg" alt="Account in Hashscan, with annotated items to check." class="gitbook-drawing">

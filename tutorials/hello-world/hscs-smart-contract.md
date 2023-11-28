@@ -1,11 +1,10 @@
 ---
 description: >-
-  Hello World sequence:
-  Write a smart contract in Solidity, compile it,
-  then use Hedera Smart Contract Service (HSCS) to deploy it and interact with it.
+  Hello World sequence: Write a smart contract in Solidity, compile it, then use
+  Hedera Smart Contract Service (HSCS) to deploy it and interact with it.
 ---
 
-# HSCS: Smart contract
+# HSCS: Smart Contract
 
 ## What you will accomplish
 
@@ -15,15 +14,17 @@ description: >-
 * [ ] Update smart contract state
 * [ ] Query smart contract state
 
-The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/),
-is intended to be used alongside this tutorial.
+The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
 ***
 
 ## Prerequisites
 
-Before you begin, you should have completed the "Create and Fund Account" sequence:
-[`docs.hedera.com/tutorials/hello-world/create-fund-account`](https://docs.hedera.com/tutorials/hello-world/create-fund-account/).
+Before you begin, you should have completed the "Create and Fund Account" sequence:&#x20;
+
+{% content-ref url="create-fund-account.md" %}
+[create-fund-account.md](create-fund-account.md)
+{% endcontent-ref %}
 
 ***
 
@@ -31,21 +32,15 @@ Before you begin, you should have completed the "Create and Fund Account" sequen
 
 ### Set up project
 
-To follow along, start with the `main` branch,
-which is the *default branch* of the repo.
-This gives you the initial state from which you can follow along
-with the steps as described in the tutorial.
+To follow along, start with the `main` branch, which is the _default branch_ of the repo. This gives you the initial state from which you can follow along with the steps as described in the tutorial.
 
 {% hint style="warning" %}
-You should already have this from the "Create and Fund Account" sequence.
-If you have not completed this, you are strongly encouraged to do so.
+You should already have this from the "Create and Fund Account" sequence. If you have not completed this, you are strongly encouraged to do so.
 
-Alternatively, you may wish to create a `.env` file
-and populate it as required.
+Alternatively, you may wish to create a `.env` file and populate it as required.
 {% endhint %}
 
-In the terminal, from the `hello-future-world` directory,
-enter the subdirectory for this sequence.
+In the terminal, from the `hello-future-world` directory, enter the subdirectory for this sequence.
 
 ```shell
 cd 03-hscs-smart-contract-ethersjs/
@@ -63,11 +58,6 @@ Next, install the dependencies using `npm`.
 npm install
 ```
 
-Then open both these files in a code editor, such as VS Code.
-
-* `my_contract.sol`
-* `script-hscs-smart-contract-ethersjs.js`
-
 You will also need to install a Solidity compiler.
 This time use the `--global` flag.
 
@@ -76,9 +66,13 @@ npm install --global solc@0.8.17
 ```
 
 {% hint style="info" %}
-Note that although the `npm` package is named `solc`,
-the executable exposed on your command line is named `solcjs`.
+Note that although the `npm` package is named `solc`, the executable exposed on your command line is named `solcjs`.
 {% endhint %}
+
+Then open both these files in a code editor, such as VS Code.
+
+* `my_contract.sol`
+* `script-hscs-smart-contract-ethersjs.js`
 
 ***
 
@@ -90,10 +84,7 @@ for it to compile successfully.
 
 #### Step 1: Get name stored in mapping
 
-Within the `greet()` function, we would like to access the `names` mapping
-and retrieve the name of the account that is invoking this function.
-The account is identified by its EVM account alias,
-which is available as `msg.sender` within Solidity code.
+Within the `greet()` function, we would like to access the `names` mapping and retrieve the name of the account that is invoking this function. The account is identified by its EVM account alias, which is available as `msg.sender` within Solidity code.
 
 ```js
         string memory name = names[msg.sender];
@@ -103,22 +94,13 @@ which is available as `msg.sender` within Solidity code.
 
 ### Compile the smart contract
 
-Once you have completed writing the smart contract in Solidity,
-you are not able to deploy it onto the network just yet.
-You will need to compile it first, using the Solidity compiler installed earlier.
+Once you have completed writing the smart contract in Solidity, you are not able to deploy it onto the network just yet. You will need to compile it first, using the Solidity compiler installed earlier.
 
 {% hint style="info" %}
-HSCS executes a virtual machine - the Ethereum Virtual Machine (EVM) -
-which runs the smart contracts.
-The EVM executes EVM bytecode that is deployed onto the network.
-The Solidity compiler outputs Solidity bytecode,
-which is is deployed to the network.
-Note that compiled bytecode and deployed bytecode,
-while *similar*, are not the same.
+HSCS executes a virtual machine - the Ethereum Virtual Machine (EVM) - which runs the smart contracts. The EVM executes EVM bytecode that is deployed onto the network. The Solidity compiler outputs Solidity bytecode, which is is deployed to the network. Note that compiled bytecode and deployed bytecode, while _similar_, are not the same.
 {% endhint %}
 
-Invoke the compiler on your Solidity file.
-Then list files in the current directory.
+Invoke the compiler on your Solidity file. Then list files in the current directory.
 
 ```shell
 solcjs --bin --abi ./my_contract.sol
@@ -127,19 +109,16 @@ ls
 
 You should see output similar to the following.
 
-```text
+```
 my_contract.sol
 my_contract_sol_MyContract.abi
 my_contract_sol_MyContract.bin
 ```
 
 {% hint style="info" %}
-The `.abi` file contains JSON,
-and describes the interface used to interact with the smart contract.
+The `.abi` file contains JSON, and describes the interface used to interact with the smart contract.
 
-The `.bin` file contains EVM bytecode,
-and this is used in the deployment of the smart contract.
-Note that this is not intended to be human readable.
+The `.bin` file contains EVM bytecode, and this is used in the deployment of the smart contract. Note that this is not intended to be human readable.
 {% endhint %}
 
 ***
@@ -170,15 +149,11 @@ Now you should see the project details.
 
 <img src="../../.gitbook/assets/hello-world--hscs--arkhia-04-project-details.drawing.svg" alt="Arkhia RPC Configuration - 04 - Project Details" class="gitbook-drawing">
 
-Create a new line in the `.env` file 
-with the key as `YOUR_JSON_RPC_URL`,
-and with the "JSON-RPC" value followed by the "API key" value.
+Create a new line in the `.env` file with the key as `YOUR_JSON_RPC_URL`, and with the "JSON-RPC" value followed by the "API key" value.
 
-For example, if the API key field is `ABC123`,
-and the JSON-RPC field is `https://pool.arkhia.io/hedera/testnet/json-rpc/v1`,
-the new line in your `.env` file should look similar to this:
+For example, if the API key field is `ABC123`, and the JSON-RPC field is `https://pool.arkhia.io/hedera/testnet/json-rpc/v1`, the new line in your `.env` file should look similar to this:
 
-```text
+```
 RPC_URL=https://pool.arkhia.io/hedera/testnet/json-rpc/v1/ABC123
 ```
 
@@ -204,29 +179,18 @@ for it to run successfully.
 
 This script uses `ContractFactory` and `Contract` from EthersJs.
 
-The `ContractFactory` class is used to prepare a smart contract for deployment.
-To do so, pass in the ABI and bytecode
-that were output by the Solidity compiler earlier.
-Also pass in the `accountWallet` object,
-which is used to authorised transactions,
-and needed for the deployment transaction.
+The `ContractFactory` class is used to prepare a smart contract for deployment. To do so, pass in the ABI and bytecode that were output by the Solidity compiler earlier. Also pass in the `accountWallet` object, which is used to authorised transactions, and needed for the deployment transaction.
 
 ```js
     const myContractFactory = new ContractFactory(
         abi, evmBytecode, accountWallet);
 ```
 
-Upon preparation, it sends a deployment transaction to the network,
-and an instance of a `Contract` object is created
-based on the result of the deployment transaction.
-This is stored in a variable, `myContract`,
-which will be used in the next steps.
-This has already been done for you in the script.
+Upon preparation, it sends a deployment transaction to the network, and an instance of a `Contract` object is created based on the result of the deployment transaction. This is stored in a variable, `myContract`, which will be used in the next steps. This has already been done for you in the script.
 
 #### Step 3: Invoke a smart contract transaction
 
-When invoking functions in a smart contract,
-you may do so in two different ways:
+When invoking functions in a smart contract, you may do so in two different ways:
 
 * (1) With a transaction → Smart contract state may be changed.
 * (2) Without a transaction → Smart contract state may be queried, but may not be changed.
@@ -242,13 +206,9 @@ For example, if you wish to use "bguiz", the invocation should look like this:
 
 #### Step 4: Invoke a smart contract query
 
-In the previous step, you changed some state of the smart contract,
-which involved submitting a transaction to the network.
-This time, you are going to read some state of the smart contract.
-This is much simpler to do as no transaction is needed.
+In the previous step, you changed some state of the smart contract, which involved submitting a transaction to the network. This time, you are going to read some state of the smart contract. This is much simpler to do as no transaction is needed.
 
-Invoke the `greet` function and save its response to a variable, `myContractQueryResult`.
-This function does not take any parameters.
+Invoke the `greet` function and save its response to a variable, `myContractQueryResult`. This function does not take any parameters.
 
 ```js
     const [myContractQueryResult] = await myContract.functions.greet();
@@ -266,7 +226,7 @@ node script-hscs-smart-contract-ethersjs.js
 
 You should see output similar to the following:
 
-```text
+```
 accountId: 0.0.1201
 accountAddress: 0x7394111093687e9710b7a7aEBa3BA0f417C54474
 accountExplorerUrl: https://hashscan.io/testnet/address/0x7394111093687e9710b7a7aEBa3BA0f417C54474
@@ -332,16 +292,9 @@ You have learnt how to:
 
 ### Next Steps
 
-Now that you have completed this Hello World sequence,
-you have interacted with Hedera Smart Contract Service (HSCS).
-There are [other Hello World sequences](/tutorials/hello-world/) for
-Hedera File Service (HFS),
-and Hedera Token Service (HTS),
-which you may wish to check out next.
+Now that you have completed this Hello World sequence, you have interacted with Hedera Smart Contract Service (HSCS). There are [other Hello World sequences](./) for Hedera File Service (HFS), and Hedera Token Service (HTS), which you may wish to check out next.
 
-You may also wish to check out the more detailed
-[HSCS workshop](https://docs.hedera.com/hedera/tutorials/smart-contracts/hscs-workshop/),
-which goes into much more depth.
+You may also wish to check out the more detailed [HSCS workshop](https://docs.hedera.com/hedera/tutorials/smart-contracts/hscs-workshop/), which goes into much more depth.
 
 ***
 
@@ -351,33 +304,23 @@ which goes into much more depth.
 
 <summary>Skip to final state</summary>
 
-To skip ahead to the final state, use the `completed` branch.
-This gives you the final state with which you can compare
-your implementation to the completed steps of the tutorial.
+To skip ahead to the final state, use the `completed` branch. This gives you the final state with which you can compare your implementation to the completed steps of the tutorial.
 
 ```shell
 git fetch origin completed:completed
 git checkout completed
 ```
 
-To see the full set of differences between
-the initial and final states of the repo,
-you can use `diff`.
+To see the full set of differences between the initial and final states of the repo, you can use `diff`.
 
 ```shell
 cd 03-hscs-smart-contract-ethersjs/
 git diff main..completed -- ./
 ```
 
-Alternatively, you may view the `diff` rendered on Github:
-[`hedera-dev/hello-future-world/compare/main..completed`](https://github.com/hedera-dev/hello-future-world/compare/main..completed)
-(This will show the `diff` for *all* sequences.)
+Alternatively, you may view the `diff` rendered on Github: [`hedera-dev/hello-future-world/compare/main..completed`](https://github.com/hedera-dev/hello-future-world/compare/main..completed) (This will show the `diff` for _all_ sequences.)
 
-{% hint style="info" %}
-Note that the branch names are delimited by `..`, and not by `...`,
-as the latter finds the `diff` with the latest common ancestor commit,
-which *is not* what we want in this case.
-{% endhint %}
+Note that the branch names are delimited by `..`, and not by `...`, as the latter finds the `diff` with the latest common ancestor commit, which _is not_ what we want in this case.
 
 </details>
 

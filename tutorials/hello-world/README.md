@@ -12,9 +12,7 @@
 
 There are multiple Hello World sequences for you to follow along.
 
-To start, you **must** do the first sequence,
-as you will need a **funded account** to do any other tasks on Hedera.
-Subsequently, you can do the remaining sequences in any order.
+To start, you **must** do the first sequence, as you will need a **funded account** to do any other tasks on Hedera. Subsequently, you can do the remaining sequences in any order.
 
 {% content-ref url="./create-fund-account.md" %} . {% endcontent-ref %}
 
