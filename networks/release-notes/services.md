@@ -6,7 +6,77 @@ description: Hedera Services release information
 
 Please visit the [Hedera status page](https://status.hedera.com/) for the latest versions supported on each network.
 
+## [v0.44](https://github.com/hashgraph/hedera-services/releases)
+
+### 0.44.3
+
+#### What's Changed
+
+* Enforce NFT allowance check on auto-creation by [@tinker-michaelj](https://github.com/tinker-michaelj) in [e69d0a9](https://github.com/hashgraph/hedera-services/commit/e69d0a917c1c0a9417a3f335129a74ac3004b7c9)
+
+### 0.44.2
+
+#### What's Changed
+
+* Catch UncheckedIOException during PCES file copy. ([#10083](https://github.com/hashgraph/hedera-services/pull/10083)) by [@cody-littley](https://github.com/cody-littley) in [#10087](https://github.com/hashgraph/hedera-services/pull/10087)
+
+### 0.44.1
+
+#### Bug Fixes
+
+* Fix PCES copy bugs. ([#10057](https://github.com/hashgraph/hedera-services/pull/10057)) [#10062](https://github.com/hashgraph/hedera-services/pull/10062)
+
+### 0.44.0
+
+#### Features
+
+* Re-add bootstrap.properties file to maintain downstream processes and increase accounts.maxNumber=20\_000\_000 [#8915](https://github.com/hashgraph/hedera-services/pull/8915)
+* 8815: sort dirty leaves during flush [#8981](https://github.com/hashgraph/hedera-services/pull/8981)
+* Add setting to disable critical quorum. [#8961](https://github.com/hashgraph/hedera-services/pull/8961)
+* Add a doc for all system entity numbers [#8993](https://github.com/hashgraph/hedera-services/pull/8993)
+* 08566 - Validate PCES Events When Loading State On Different Network [#8568](https://github.com/hashgraph/hedera-services/pull/8568)
+* Differential testing analytic engine: State file file dumper now dumps special files [#8991](https://github.com/hashgraph/hedera-services/pull/8991)
+* Added improved startup ASCII art. [#9028](https://github.com/hashgraph/hedera-services/pull/9028)
+* Characterize invalid id failure modes for classic HTS calls [#9053](https://github.com/hashgraph/hedera-services/pull/9053)
+* Add ordinals to status diagram, and update javadocs [#9108](https://github.com/hashgraph/hedera-services/pull/9108)
+* 5552: Create a Grafana Data Dashboard to view all existing relevant data metrics [#8845](https://github.com/hashgraph/hedera-services/pull/8845)
+* Update Besu to version 23.10.0 [#9168](https://github.com/hashgraph/hedera-services/pull/9168)
+* Move EventDescriptor from Platform-Core to Common Library [#9200](https://github.com/hashgraph/hedera-services/pull/9200)
+* Add lables to the merkle tree visualziation in the logs. [#9206](https://github.com/hashgraph/hedera-services/pull/9206)
+* Remove legacy address book stuff. [#9204](https://github.com/hashgraph/hedera-services/pull/9204)
+* Rename event creation classes. [#9167](https://github.com/hashgraph/hedera-services/pull/9167)
+* 9072 Enable Hapi Tests - General Improvements [#9212](https://github.com/hashgraph/hedera-services/pull/9212)
+* Remove obsolete tests as discussed [#9219](https://github.com/hashgraph/hedera-services/pull/9219)
+* 09162 cleanup ConsensusHashManager [#9165](https://github.com/hashgraph/hedera-services/pull/9165)
+* Added new metrics for event creation. [#9228](https://github.com/hashgraph/hedera-services/pull/9228)
+* Consensus changes [#6844](https://github.com/hashgraph/hedera-services/pull/6844)
+* Write standalone event deduplicator [#9247](https://github.com/hashgraph/hedera-services/pull/9247)
+* 09162 event creation metrics [#9242](https://github.com/hashgraph/hedera-services/pull/9242)
+* 08670 Non linking orphan buffer [#9241](https://github.com/hashgraph/hedera-services/pull/9241)
+* Cleanup platform construction. [#9250](https://github.com/hashgraph/hedera-services/pull/9250)
+* Add feature that enables us to ignore janky state modification during testing. [#9288](https://github.com/hashgraph/hedera-services/pull/9288)
+* Tests for new Logging classes [#8783](https://github.com/hashgraph/hedera-services/pull/8783)
+* Add new tests to JTR metadata. [#9315](https://github.com/hashgraph/hedera-services/pull/9315)
+* 08461 cli transplant state 2 [#9309](https://github.com/hashgraph/hedera-services/pull/9309)
+* Change setup to have only one Gradle build [#8858](https://github.com/hashgraph/hedera-services/pull/8858)
+* Allow build to run without internet connection using --offline [#9037](https://github.com/hashgraph/hedera-services/pull/9037)
+* Platform Stress Testing Tool [#8485](https://github.com/hashgraph/hedera-services/pull/8485)
+* update nfts.maxAllowedMints [#9464](https://github.com/hashgraph/hedera-services/pull/9464)
+* Compress data sent over the network. [#9416](https://github.com/hashgraph/hedera-services/pull/9416)
+* 07501 Redesign compaction [#9060](https://github.com/hashgraph/hedera-services/pull/9060)
+* 09285 Create standalone event validator [#9360](https://github.com/hashgraph/hedera-services/pull/9360)
+* Remove config option to disable event sig verification [#9478](https://github.com/hashgraph/hedera-services/pull/9478)
+* Add an optional reconnect rate limit. [#9522](https://github.com/hashgraph/hedera-services/pull/9522)
+* remove deprecated method [#9497](https://github.com/hashgraph/hedera-services/pull/9497)
+* 09412 Create standalone in-order linker [#9417](https://github.com/hashgraph/hedera-services/pull/9417)
+* Increase contract kv/pairs storage allowed by 100x [#9581](https://github.com/hashgraph/hedera-services/pull/9581) / [#9590](https://github.com/hashgraph/hedera-services/pull/9590)
+* 9582: Backport the fix for 9479 to release/0.44 [#9583](https://github.com/hashgraph/hedera-services/pull/9583)
+
 ## [v0.43](https://github.com/hashgraph/hedera-services/releases/tag/v0.43.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE: NOVEMBER 27, 2023**
+{% endhint %}
 
 {% hint style="success" %}
 **TESTNET UPDATE: NOVEMBER 2, 2023**

@@ -22,6 +22,6 @@ Once you have obtained your mainnet account from a supported wallet, you can use
 
 To do this, you will need to point your Hedera client to mainnet (`Client.forMainnet()`)and use the `AccountCreateTransaction` API to create a new account. The transaction fee payer (referred to as the `operator` in the SDKs) information should be set to the mainnet account you created from one of the above wallets (`setOperator(<mainnetAccountId, mainnetAccountPrivateKey)`).
 
-{% content-ref url="../../sdks-and-apis/sdks/cryptocurrency/create-an-account.md" %}
-[create-an-account.md](../../sdks-and-apis/sdks/cryptocurrency/create-an-account.md)
+{% content-ref url="../../sdks-and-apis/sdks/accounts-and-hbar/create-an-account.md" %}
+[create-an-account.md](../../sdks-and-apis/sdks/accounts-and-hbar/create-an-account.md)
 {% endcontent-ref %}

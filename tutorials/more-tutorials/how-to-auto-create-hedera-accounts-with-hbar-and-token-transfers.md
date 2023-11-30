@@ -251,7 +251,7 @@ const tokenId = await createFungibleToken(client, treasuryAccId, supplyKey, trea
 
 An alias is an initial public key that will convert into a Hedera account through auto-account creation. An alias consists of \<shard>.\<realm>.\<bytes>.
 
-To learn more about accounts created via an account alias go [here](../../sdks-and-apis/sdks/cryptocurrency/create-an-account.md).
+To learn more about accounts created via an account alias go [here](../../sdks-and-apis/sdks/accounts-and-hbar/create-an-account.md).
 
 ```javascript
  const privateKey = PrivateKey.generateECDSA();
